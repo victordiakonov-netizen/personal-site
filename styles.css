@@ -1,0 +1,350 @@
+/* =========================================================
+   Виктор Дьяконов — personal site
+   Manrope. Anthracite accent. Strict minimalism.
+   ========================================================= */
+
+:root {
+  --paper: #fafaf7;
+  --ink: #15161a;
+  --muted: #71706c;
+  --hair: #e2e0d9;
+  --ph: #ebe9e2;
+  --accent: #2a2d34;
+}
+
+html, body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+* { box-sizing: border-box; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 96px;
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 72px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 8px 0;
+  margin-left: 36px;
+  transition: color .2s;
+}
+
+.nav-link:hover { color: var(--ink); }
+.nav.scrolled { border-bottom-color: var(--hair); }
+
+/* ---------- Type ---------- */
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.h2 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: clamp(40px, 4vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.lede {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+  max-width: 520px;
+  letter-spacing: -0.005em;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.body-muted { color: var(--muted); }
+
+.body p {
+  margin: 0 0 1em;
+  max-width: 640px;
+}
+
+/* ---------- Sections ---------- */
+
+section.s {
+  padding-block: 200px;
+  border-top: 1px solid var(--hair);
+}
+
+.s-head {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: baseline;
+  margin-bottom: 96px;
+}
+
+.s-head-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.s-num {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ---------- Contact links ---------- */
+
+.contacts {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  position: relative;
+  display: inline-block;
+  padding: 4px 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color .2s;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--ink);
+  transition: transform .3s ease, background-color .2s;
+}
+
+.contact-link:hover { color: var(--accent); }
+.contact-link:hover::after { background: var(--accent); }
+
+.contact-link .arrow {
+  display: inline-block;
+  margin-left: 6px;
+  transition: transform .25s;
+}
+
+.contact-link:hover .arrow { transform: translate(2px, -2px); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: 96px 200px;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 112px;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 460px;
+  height: 560px;
+  background: var(--ph);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-photo::after {
+  content: 'ФОТО · 4:5';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- About ---------- */
+
+.about-body { max-width: 640px; }
+.about-body p + p { margin-top: 1.2em; }
+
+/* ---------- Doing ---------- */
+
+.doing-list { border-top: 1px solid var(--hair); }
+
+.doing-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 120px;
+  gap: 32px;
+  align-items: baseline;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--hair);
+  transition: padding-left .25s, color .2s;
+  cursor: default;
+}
+
+.doing-row:hover { padding-left: 16px; }
+.doing-row:hover .doing-arrow {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+.doing-num {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.doing-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.doing-desc {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 360px;
+}
+
+.doing-arrow {
+  text-align: right;
+  color: var(--muted);
+  font-size: 14px;
+  transition: color .2s, transform .25s;
+}
+
+/* ---------- Blog ---------- */
+
+.blog-list { border-top: 1px solid var(--hair); }
+
+.blog-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  gap: 32px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--hair);
+  transition: padding-left .25s;
+  color: inherit;
+}
+
+.blog-row:hover { padding-left: 16px; }
+.blog-row:hover .blog-title { color: var(--accent); }
+
+.blog-date {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.blog-title {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color .2s;
+}
+
+.blog-meta {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: right;
+  font-weight: 500;
+}
+
+.blog-more {
+  margin-top: 48px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  color: var(--muted);
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 4px;
+  transition: color .2s, border-color .2s;
+}
+
+.blog-more:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- Contacts section ---------- */
+
+.contacts-section {
+  padding-block: 200px 160px;
+  border-top: 1px solid var(--hair);
+}
+
+.contacts-block {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--hair);
+  padding: 32px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+}

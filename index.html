@@ -1,34 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Виктор Дьяконов</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <h1>Виктор Дьяконов</h1>
-  <p>Исполнительный директор сети оптик «Счастливый взгляд»</p>
+  <!-- ========== Nav ========== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <nav class="nav-inner">
+        <a class="nav-link" href="#about">о себе</a>
+        <a class="nav-link" href="#doing">чем занимаюсь</a>
+        <a class="nav-link" href="#blog">блог</a>
+        <a class="nav-link" href="#contacts">контакты</a>
+      </nav>
+    </div>
+  </header>
 
-  <p>
-    Больше двадцати лет в ритейле — от торгового представителя до операционного директора округа
-    в «Магните», где под управлением было 1500+ магазинов и 17 тысяч человек по Северо-Западу.
-    До этого — «Пятерочка», производственный холдинг, региональные сети.
-    Привык работать с большими системами: P&amp;L, команды, открытие новых точек, интеграции.
-  </p>
+  <!-- ========== Hero ========== -->
+  <section class="hero container">
+    <div class="hero-photo">
+      <!-- TODO: заменить на реальное фото 4:5 -->
+    </div>
+    <div>
+      <p class="lede">
+        Виктор Дьяконов. CEO сети оптик «Счастливый взгляд». Здесь — про бизнес, ИИ в работе и то, что занимает меня за пределами офиса.
+      </p>
+      <div class="contacts" style="margin-top: 56px;">
+        <a class="contact-link" href="mailto:victor.diakonov@gmail.com">Email <span class="arrow">↗</span></a>
+        <a class="contact-link" href="#">Telegram <span class="arrow">↗</span></a>
+        <a class="contact-link" href="#">LinkedIn <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
 
-  <p>
-    Живу в Петербурге. Учился на международных отношениях в СПбГУ и на маркетолога
-    в Политехе — отсюда привычка думать и про цифры, и про людей одновременно.
-    Здесь пишу о том, что происходит в бизнесе и у меня в голове.
-  </p>
+  <!-- ========== О себе ========== -->
+  <section class="s container" id="about">
+    <div class="s-head">
+      <div class="s-head-meta">
+        <span class="s-num">01</span>
+        <span class="label">о себе</span>
+      </div>
+      <h2 class="h2">Коротко</h2>
+    </div>
+    <div class="body about-body">
+      <p>
+        Больше двадцати лет в ритейле — от торгового представителя до операционного директора округа в «Магните», где под управлением было 1500+ магазинов и 17 тысяч человек по Северо-Западу. До этого — «Пятёрочка», производственный холдинг, региональные сети.
+      </p>
+      <p>
+        Сейчас возглавляю «Счастливый взгляд». Работаю с большими системами: P&L, команды, открытие новых точек. Слежу за тем, как ИИ меняет операционный менеджмент — и проверяю это на практике.
+      </p>
+    </div>
+  </section>
 
-  <h2>Чем занимаюсь:</h2>
-  <ul>
-    <li><strong>Ритейл-операции</strong> — управление сетями, процессы, P&amp;L, открытие новых точек</li>
-    <li><strong>Развитие команды</strong> — найм, обучение, построение структур от десятков до тысяч человек</li>
-    <li><strong>ИИ в бизнесе</strong> — как применять ИИ-инструменты в операционном управлении и автоматизации</li>
-  </ul>
+  <!-- ========== Чем занимаюсь ========== -->
+  <section class="s container" id="doing">
+    <div class="s-head">
+      <div class="s-head-meta">
+        <span class="s-num">02</span>
+        <span class="label">чем занимаюсь</span>
+      </div>
+      <h2 class="h2">Три направления</h2>
+    </div>
+    <div class="doing-list">
+      <div class="doing-row">
+        <span class="doing-num">01</span>
+        <span class="doing-title">Оптика</span>
+        <span class="doing-desc">Развиваю «Счастливый взгляд» — операционка, рост сети, команда.</span>
+        <span class="doing-arrow">подробнее →</span>
+      </div>
+      <div class="doing-row">
+        <span class="doing-num">02</span>
+        <span class="doing-title">ИИ в бизнесе</span>
+        <span class="doing-desc">Внедряю и экспериментирую — от ассистентов сотрудникам до продуктовых пилотов.</span>
+        <span class="doing-arrow">подробнее →</span>
+      </div>
+      <div class="doing-row">
+        <span class="doing-num">03</span>
+        <span class="doing-title">Личные интересы</span>
+        <span class="doing-desc">Спорт, чтение, путешествия — то, что вне работы и питает её.</span>
+        <span class="doing-arrow">подробнее →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Блог ========== -->
+  <section class="s container" id="blog">
+    <div class="s-head">
+      <div class="s-head-meta">
+        <span class="s-num">03</span>
+        <span class="label">блог</span>
+      </div>
+      <h2 class="h2">Последние записи</h2>
+    </div>
+    <div class="blog-list">
+      <a class="blog-row" href="#">
+        <span class="blog-date">15 мая 2026</span>
+        <span class="blog-title">Как мы внедряли ИИ-ассистентов в работу мерчандайзеров</span>
+        <span class="blog-meta">7 мин →</span>
+      </a>
+      <a class="blog-row" href="#">
+        <span class="blog-date">02 мая 2026</span>
+        <span class="blog-title">Что я понял за пять лет в роли CEO</span>
+        <span class="blog-meta">4 мин →</span>
+      </a>
+      <a class="blog-row" href="#">
+        <span class="blog-date">18 апр 2026</span>
+        <span class="blog-title">Пять книг, которые повлияли на меня сильнее всего</span>
+        <span class="blog-meta">3 мин →</span>
+      </a>
+    </div>
+    <a class="blog-more" href="blog.html">все записи →</a>
+  </section>
+
+  <!-- ========== Контакты ========== -->
+  <section class="contacts-section container" id="contacts">
+    <div class="contacts-block">
+      <div class="s-head-meta">
+        <span class="s-num">04</span>
+        <span class="label">контакты</span>
+      </div>
+      <div>
+        <h2 class="h2" style="margin-bottom: 32px;">Напишите — отвечу.</h2>
+        <p class="body body-muted" style="max-width: 480px; margin-bottom: 56px;">
+          Пишите по любому поводу — знакомство, вопросы о бизнесе или предложения о сотрудничестве.
+        </p>
+        <div class="contacts">
+          <a class="contact-link" href="mailto:victor.diakonov@gmail.com">Email <span class="arrow">↗</span></a>
+          <a class="contact-link" href="#">Telegram <span class="arrow">↗</span></a>
+          <a class="contact-link" href="#">LinkedIn <span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="container">
+      <span>© Виктор Дьяконов, 2026</span>
+      <span>сделано вручную</span>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav — граница появляется при скролле
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  </script>
 
 </body>
 </html>
