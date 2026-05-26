@@ -168,45 +168,36 @@ section.s {
   color: var(--accent);
 }
 
-/* ---------- Contact links ---------- */
+/* ---------- Social icon buttons ---------- */
 
-.contacts {
+.social-links {
   display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.contact-link {
-  position: relative;
-  display: inline-block;
-  padding: 4px 0;
-  font-size: 16px;
-  font-weight: 500;
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--hair);
   color: var(--ink);
-  transition: color .2s;
+  transition: border-color .2s, background .2s, color .2s;
 }
 
-.contact-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.75;
+}
+
+.social-btn:hover {
+  border-color: var(--ink);
   background: var(--ink);
-  transition: transform .3s ease, background-color .2s;
+  color: var(--paper);
 }
-
-.contact-link:hover { color: var(--accent); }
-.contact-link:hover::after { background: var(--accent); }
-
-.contact-link .arrow {
-  display: inline-block;
-  margin-left: 6px;
-  transition: transform .25s;
-}
-
-.contact-link:hover .arrow { transform: translate(2px, -2px); }
 
 /* ---------- Hero ---------- */
 
