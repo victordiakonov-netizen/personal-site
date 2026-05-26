@@ -370,9 +370,10 @@ section.s {
 
 footer {
   border-top: 1px solid var(--hair);
-  padding: 32px 0;
-  font-size: 13px;
-  color: var(--muted);
+  padding: 40px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
 }
 
 footer .container {
