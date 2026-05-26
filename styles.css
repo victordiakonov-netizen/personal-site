@@ -143,7 +143,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Sections ---------- */
 
 section.s {
-  padding-block: 200px;
+  padding-block: 120px;
   border-top: 1px solid var(--hair);
 }
 
@@ -211,7 +211,7 @@ section.s {
 /* ---------- Hero ---------- */
 
 .hero {
-  padding-block: 96px 200px;
+  padding-block: 80px 120px;
   display: grid;
   grid-template-columns: 460px 1fr;
   gap: 112px;
@@ -355,7 +355,7 @@ section.s {
 /* ---------- Contacts section ---------- */
 
 .contacts-section {
-  padding-block: 200px 160px;
+  padding-block: 120px 100px;
   border-top: 1px solid var(--hair);
 }
 
