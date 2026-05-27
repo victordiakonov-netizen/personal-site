@@ -437,18 +437,18 @@ footer .container {
   /* --- Hero --- */
   .hero {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding-block: 40px 80px;
+    gap: 28px;
+    padding-block: 24px 64px;
   }
 
   .hero-photo {
     width: 100%;
-    height: 380px;
+    height: 240px;
   }
 
-  .hero-name { font-size: 44px; }
-  .hero-role { font-size: 20px; }
-  .hero-desc { font-size: 17px; }
+  .hero-name { font-size: 40px; }
+  .hero-role { font-size: 18px; }
+  .hero-desc { font-size: 16px; }
 
   /* --- Секции --- */
   section.s { padding-block: 80px; }
