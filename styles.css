@@ -453,6 +453,9 @@ footer .container {
   /* --- Секции --- */
   section.s { padding-block: 80px; }
 
+  .h2 { font-size: 30px; }
+  .body { font-size: 15px; }
+
   .s-head {
     grid-template-columns: 1fr;
     gap: 12px;
