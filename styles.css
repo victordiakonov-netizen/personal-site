@@ -370,3 +370,127 @@ footer .container {
   display: flex;
   justify-content: space-between;
 }
+
+/* =========================================================
+   Hamburger (скрыт на десктопе)
+   ========================================================= */
+
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+  z-index: 200;
+}
+
+.nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform .25s, opacity .2s;
+}
+
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =========================================================
+   Mobile (≤ 640px)
+   ========================================================= */
+
+@media (max-width: 640px) {
+
+  /* --- Контейнер --- */
+  .container { padding: 0 20px; }
+
+  /* --- Nav --- */
+  .nav-burger { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--paper);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    z-index: 100;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links .nav-link {
+    font-size: 26px;
+    font-weight: 700;
+    margin-left: 0;
+    color: var(--ink);
+  }
+
+  /* --- Hero --- */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 40px 80px;
+  }
+
+  .hero-photo {
+    width: 100%;
+    height: 380px;
+  }
+
+  .hero-name { font-size: 44px; }
+  .hero-role { font-size: 20px; }
+  .hero-desc { font-size: 17px; }
+
+  /* --- Секции --- */
+  section.s { padding-block: 80px; }
+
+  .s-head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  /* --- Doing --- */
+  .doing-row {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    padding: 32px 0;
+  }
+
+  .doing-desc,
+  .doing-arrow { display: none; }
+
+  .doing-title { font-size: 26px; }
+
+  /* --- Blog --- */
+  .blog-row {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+  }
+
+  .blog-date { display: none; }
+  .blog-title { font-size: 18px; }
+
+  /* --- Контакты --- */
+  .contacts-section { padding-block: 80px 60px; }
+
+  .contacts-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* --- Footer --- */
+  footer .container {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

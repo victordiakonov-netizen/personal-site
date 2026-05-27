@@ -18,10 +18,15 @@
   <header class="nav" id="nav">
     <div class="container">
       <nav class="nav-inner">
-        <a class="nav-link" href="#about">о себе</a>
-        <a class="nav-link" href="#doing">чем занимаюсь</a>
-        <a class="nav-link" href="#blog">блог</a>
-        <a class="nav-link" href="#contacts">контакты</a>
+        <button class="nav-burger" id="nav-burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a class="nav-link" href="#about">о себе</a>
+          <a class="nav-link" href="#doing">чем занимаюсь</a>
+          <a class="nav-link" href="#blog">блог</a>
+          <a class="nav-link" href="#contacts">контакты</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -180,6 +185,22 @@
 
     // Lucide icons
     lucide.createIcons();
+
+    // Мобильное меню
+    const burger = document.getElementById('nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', function () {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
   </script>
 
 </body>
