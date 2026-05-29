@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог — Виктор Дьяконов</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+  <!-- ========== Nav ========== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <nav class="nav-inner">
+        <button class="nav-burger" id="nav-burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a class="nav-link" href="index.html#about">о себе</a>
+          <a class="nav-link" href="index.html#doing">чем занимаюсь</a>
+          <a class="nav-link" href="blog.html">блог</a>
+          <a class="nav-link" href="index.html#contacts">контакты</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Блог ========== -->
+  <main class="container">
+    <section class="s" style="border-top: none; padding-top: 80px;">
+      <div class="s-head">
+        <div class="s-head-meta">
+          <span class="label">блог</span>
+        </div>
+        <h2 class="h2">Все записи</h2>
+      </div>
+      <div class="blog-list">
+        <a class="blog-row" href="posts/cliff-young.html">
+          <span class="blog-date">29 мая 2026</span>
+          <span class="blog-title">Он не знал, что можно спать. Поэтому и выиграл</span>
+          <span class="blog-meta">4 мин →</span>
+        </a>
+        <a class="blog-row" href="posts/seven-of-thirty.html">
+          <span class="blog-date">28 мая 2026</span>
+          <span class="blog-title">Семь из тридцати</span>
+          <span class="blog-meta">6 мин →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="container">
+      <span>© Виктор Дьяконов, 2026</span>
+      <span>сделано вручную</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    lucide.createIcons();
+
+    const burger = document.getElementById('nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', function () {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
