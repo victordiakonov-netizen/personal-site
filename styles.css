@@ -372,6 +372,65 @@ footer .container {
 }
 
 /* =========================================================
+   Посты (posts/*.html)
+   ========================================================= */
+
+.post-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 0 120px;
+}
+
+.post-back {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  border-bottom: 1px solid var(--hair);
+  padding-bottom: 4px;
+  margin-bottom: 56px;
+  transition: color .2s, border-color .2s;
+}
+
+.post-back:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.post-meta {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+
+.post-h1 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.5vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 64px;
+}
+
+.post-body {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.post-body p {
+  margin: 0 0 1.5em;
+}
+
+.post-body p.post-signature {
+  font-style: italic;
+  color: var(--muted);
+  margin: 2em 0 0;
+}
+
+/* =========================================================
    Hamburger (скрыт на десктопе)
    ========================================================= */
 
@@ -496,4 +555,9 @@ footer .container {
     flex-direction: column;
     gap: 8px;
   }
+
+  /* --- Посты --- */
+  .post-wrap { padding: 40px 0 80px; }
+  .post-h1 { font-size: 22px; margin-bottom: 40px; }
+  .post-body { font-size: 16px; }
 }
