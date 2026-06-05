@@ -39,18 +39,7 @@
         </div>
         <h2 class="h2">Все записи</h2>
       </div>
-      <div class="blog-list">
-        <a class="blog-row" href="posts/fifty-fifty.html">
-          <span class="blog-date">2 июня 2026</span>
-          <span class="blog-title">Пятьдесят на пятьдесят</span>
-          <span class="blog-meta">5 мин →</span>
-        </a>
-        <a class="blog-row" href="posts/seven-of-thirty.html">
-          <span class="blog-date">28 мая 2026</span>
-          <span class="blog-title">Семь из тридцати</span>
-          <span class="blog-meta">6 мин →</span>
-        </a>
-      </div>
+      <div class="blog-list" id="all-posts"></div>
     </section>
   </main>
 
@@ -62,7 +51,28 @@
     </div>
   </footer>
 
+  <script src="posts-data.js"></script>
   <script>
+    // Все записи из posts-data.js
+    (function () {
+      var months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+      function fmtDate(iso) {
+        var p = iso.split('-');
+        return +p[2] + ' ' + months[+p[1] - 1] + ' ' + p[0];
+      }
+      var list = document.getElementById('all-posts');
+      POSTS.forEach(function (post) {
+        var a = document.createElement('a');
+        a.className = 'blog-row';
+        a.href = post.url;
+        a.innerHTML =
+          '<span class="blog-date">' + fmtDate(post.date) + '</span>' +
+          '<span class="blog-title">' + post.title + '</span>' +
+          '<span class="blog-meta">' + post.mins + ' мин →</span>';
+        list.appendChild(a);
+      });
+    }());
+
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', function () {
       nav.classList.toggle('scrolled', window.scrollY > 8);
