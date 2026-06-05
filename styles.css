@@ -245,13 +245,19 @@ section.s {
 
 .doing-row {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr 120px;
+  grid-template-columns: 80px 1fr 120px;
   gap: 32px;
-  align-items: baseline;
+  align-items: start;
   padding: 56px 0;
   border-bottom: 1px solid var(--hair);
   transition: padding-left .25s, color .2s;
   cursor: default;
+}
+
+.doing-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .doing-row:hover { padding-left: 16px; }
@@ -276,14 +282,16 @@ section.s {
 .doing-desc {
   font-size: 16px;
   color: var(--muted);
-  line-height: 1.5;
-  max-width: 360px;
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0;
 }
 
 .doing-arrow {
   text-align: right;
   color: var(--muted);
   font-size: 14px;
+  text-decoration: none;
   transition: color .2s, transform .25s;
 }
 
@@ -528,7 +536,6 @@ footer .container {
     padding: 32px 0;
   }
 
-  .doing-desc,
   .doing-arrow { display: none; }
 
   .doing-title { font-size: 26px; }
