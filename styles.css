@@ -245,7 +245,7 @@ section.s {
 
 .doing-row {
   display: grid;
-  grid-template-columns: 80px auto 1fr 120px;
+  grid-template-columns: 80px 240px 1fr 120px;
   gap: 32px;
   align-items: start;
   padding: 56px 0;
