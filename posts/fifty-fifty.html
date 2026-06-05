@@ -104,5 +104,17 @@
     });
   </script>
 
+  <script src="../posts-data.js"></script>
+  <script>
+    (function () {
+      var filename = 'posts/' + location.pathname.split('/').pop();
+      var post = POSTS.find(function (p) { return p.url === filename; });
+      if (!post || !post.tags || !post.tags.length) return;
+      var tagStr = post.tags.map(function (t) { return TAG_NAMES[t] || t; }).join(', ');
+      var meta = document.querySelector('.post-meta');
+      if (meta) meta.textContent += ' · ' + tagStr;
+    }());
+  </script>
+
 </body>
 </html>
