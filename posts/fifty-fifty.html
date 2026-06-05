@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Пятьдесят на пятьдесят — Виктор Дьяконов</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- ========== Nav ========== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <nav class="nav-inner">
+        <button class="nav-burger" id="nav-burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a class="nav-link" href="../index.html#about">о себе</a>
+          <a class="nav-link" href="../index.html#doing">чем занимаюсь</a>
+          <a class="nav-link" href="../blog.html">блог</a>
+          <a class="nav-link" href="../index.html#contacts">контакты</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Статья ========== -->
+  <main class="container">
+    <div class="post-wrap">
+
+      <a class="post-back" href="../index.html#blog">← назад</a>
+
+      <p class="post-meta">2 июня 2026 · 5 мин чтения</p>
+      <h1 class="post-h1">Пятьдесят на пятьдесят</h1>
+
+      <div class="post-body">
+        <p>В декабре 2018-го я перешёл в «Магнит» директором Новгородского филиала. Под тысячу человек в филиале, десять — в прямом подчинении.</p>
+
+        <p>К тому моменту управленческого опыта у меня уже хватало. Стиль — авторитарный. Не в смысле «диктатор», а в смысле «не прощал ошибок и умел показать это голосом». В моей картине мира провал означал, что кто-то не сделал работу как надо, и это надо обозначить.</p>
+
+        <p>Однажды я узнал, что новый магазин не откроется в срок. За день до открытия. Я вызвал к себе начальника отдела развития Алексея Тележина и старшего строителя Дениса Попова.</p>
+
+        <p>У меня в кабинете стоял длинный стол, приставленный к рабочему буквой Т. Двое сидят с одной стороны, я — с другой. Заходили они напряжённо — было понятно, зачем вызвал.</p>
+
+        <p>Я спросил, почему узнаю о переносе открытия за один день до. Они переглянулись. И сказали правду.</p>
+
+        <p>Сказали, что обсуждали между собой, когда мне сообщить. Решили — не заранее. Если бы сказали раньше, услышали бы тираду в свой адрес гарантированно. А так — есть пятьдесят процентов, что строители всё-таки успеют, мы откроемся вовремя и до меня вообще не дойдёт.</p>
+
+        <p>Они выбрали 50% вероятности скандала вместо 100%.</p>
+
+        <p>Сидел, слушал. Не сразу — но к середине разговора понимал, что отвечать мне на это нечего. Они не ошиблись. В моей модели управления у них действительно не было способа принести плохую новость рано. Любая плохая новость превращалась в крик, и логичная стратегия — отложить её насколько возможно, в надежде, что она исчезнет сама.</p>
+
+        <p>Я в этот момент думал не про магазин. Магазин уже не откроется, поезд ушёл. Я думал про то, сколько ещё плохих новостей сейчас зреет в филиале, до меня не дошло и не дойдёт, потому что вокруг меня выстроилась рациональная система умалчивания.</p>
+
+        <p>Разговор длился минут пятнадцать. Я их отпустил. Магазин открылся с задержкой.</p>
+
+        <p>Меняться было долго. Не было одного дня, после которого я стал другим — была привычка сдерживать себя. Выдыхать, прежде чем оценивать. Сначала спрашивать, потом реагировать. Делать паузу там, где раньше реакция шла мгновенно.</p>
+
+        <p>Месяцами я ловил себя на старой реакции и откатывался назад. Усилием это перестало быть не сразу, и я об этом помню.</p>
+
+        <p>Алексей и Денис, кстати, остались работать. Мы с ними потом провели в «Магните» много лет, сделали много дел. До сих пор поздравляем друг друга с праздниками.</p>
+
+        <p>Алексей, Денис, спасибо за тот разговор. Один из важнейших в моём становлении как управленца.</p>
+
+        <p class="post-signature">Не теряйте фокус.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="container">
+      <span>© Виктор Дьяконов, 2026</span>
+      <span>сделано вручную</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const burger = document.getElementById('nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', function () {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
