@@ -120,9 +120,15 @@
       var filename = 'posts/' + location.pathname.split('/').pop();
       var post = POSTS.find(function (p) { return p.url === filename; });
       if (!post || !post.tags || !post.tags.length) return;
-      var tagStr = post.tags.map(function (t) { return TAG_NAMES[t] || t; }).join(', ');
+      var tagHtml = post.tags.map(function (t) {
+        return '<a class="blog-tag" href="../blog.html?tag=' + t + '">' + (TAG_NAMES[t] || t) + '</a>';
+      }).join(', ');
       var meta = document.querySelector('.post-meta');
-      if (meta) meta.textContent += ' · ' + tagStr;
+      if (meta) {
+        var span = document.createElement('span');
+        span.innerHTML = ' · ' + tagHtml;
+        meta.appendChild(span);
+      }
     }());
   </script>
 

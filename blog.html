@@ -33,11 +33,17 @@
   <!-- ========== Блог ========== -->
   <main class="container">
     <section class="s" style="border-top: none; padding-top: 80px;">
-      <div class="s-head">
+      <div class="s-head" style="align-items: start;">
         <div class="s-head-meta">
           <span class="label">блог</span>
         </div>
-        <h2 class="h2">Все записи</h2>
+        <div>
+          <h2 class="h2">Все записи</h2>
+          <div class="blog-filter-info" id="blog-filter-info" style="display: none;">
+            <span class="blog-filter-label" id="blog-filter-name"></span>
+            <a class="blog-filter-clear" href="blog.html">все записи →</a>
+          </div>
+        </div>
       </div>
       <div class="blog-list" id="all-posts"></div>
     </section>
@@ -60,17 +66,38 @@
         var p = iso.split('-');
         return +p[2] + ' ' + months[+p[1] - 1] + ' ' + p[0];
       }
+
+      var params = new URLSearchParams(location.search);
+      var activeTag = params.get('tag');
+      if (activeTag && !TAG_NAMES[activeTag]) activeTag = null;
+
+      if (activeTag) {
+        document.getElementById('blog-filter-name').textContent = TAG_NAMES[activeTag];
+        document.getElementById('blog-filter-info').style.display = 'flex';
+      }
+
+      var posts = activeTag
+        ? POSTS.filter(function (p) { return p.tags && p.tags.indexOf(activeTag) !== -1; })
+        : POSTS;
+
       var list = document.getElementById('all-posts');
-      POSTS.forEach(function (post) {
-        var a = document.createElement('a');
-        a.className = 'blog-row';
-        a.href = post.url;
-        var tagStr = post.tags && post.tags.length ? ' · ' + post.tags.map(function(t) { return TAG_NAMES[t] || t; }).join(', ') : '';
-        a.innerHTML =
+      posts.forEach(function (post) {
+        var row = document.createElement('div');
+        row.className = 'blog-row';
+        row.addEventListener('click', function (e) {
+          if (!e.target.closest('a')) location.href = post.url;
+        });
+        var tagHtml = '';
+        if (post.tags && post.tags.length) {
+          tagHtml = ' · ' + post.tags.map(function (t) {
+            return '<a class="blog-tag" href="blog.html?tag=' + t + '">' + (TAG_NAMES[t] || t) + '</a>';
+          }).join(', ');
+        }
+        row.innerHTML =
           '<span class="blog-date">' + fmtDate(post.date) + '</span>' +
           '<span class="blog-title">' + post.title + '</span>' +
-          '<span class="blog-meta">' + post.mins + ' мин' + tagStr + ' →</span>';
-        list.appendChild(a);
+          '<span class="blog-meta">' + post.mins + ' мин' + tagHtml + ' →</span>';
+        list.appendChild(row);
       });
     }());
 

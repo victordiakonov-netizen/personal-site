@@ -166,19 +166,26 @@
       var months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
       function fmtDate(iso) {
         var p = iso.split('-');
-        return +p[2] + ' ' + months[+p[1] - 1] + ' ' + p[0];
+        return +p[2] + ' ' + months[+p[1] - 1] + ' ' + p[0];
       }
       var list = document.getElementById('recent-posts');
       POSTS.slice(0, 2).forEach(function (post) {
-        var a = document.createElement('a');
-        a.className = 'blog-row';
-        a.href = post.url;
-        var tagStr = post.tags && post.tags.length ? ' · ' + post.tags.map(function(t) { return TAG_NAMES[t] || t; }).join(', ') : '';
-        a.innerHTML =
+        var row = document.createElement('div');
+        row.className = 'blog-row';
+        row.addEventListener('click', function (e) {
+          if (!e.target.closest('a')) location.href = post.url;
+        });
+        var tagHtml = '';
+        if (post.tags && post.tags.length) {
+          tagHtml = ' · ' + post.tags.map(function (t) {
+            return '<a class="blog-tag" href="blog.html?tag=' + t + '">' + (TAG_NAMES[t] || t) + '</a>';
+          }).join(', ');
+        }
+        row.innerHTML =
           '<span class="blog-date">' + fmtDate(post.date) + '</span>' +
           '<span class="blog-title">' + post.title + '</span>' +
-          '<span class="blog-meta">' + post.mins + ' мин' + tagStr + ' →</span>';
-        list.appendChild(a);
+          '<span class="blog-meta">' + post.mins + ' мин' + tagHtml + ' →</span>';
+        list.appendChild(row);
       });
     }());
 
