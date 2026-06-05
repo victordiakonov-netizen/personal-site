@@ -65,10 +65,11 @@
         var a = document.createElement('a');
         a.className = 'blog-row';
         a.href = post.url;
+        var tagStr = post.tags && post.tags.length ? ' · ' + post.tags.map(function(t) { return TAG_NAMES[t] || t; }).join(', ') : '';
         a.innerHTML =
           '<span class="blog-date">' + fmtDate(post.date) + '</span>' +
           '<span class="blog-title">' + post.title + '</span>' +
-          '<span class="blog-meta">' + post.mins + ' мин →</span>';
+          '<span class="blog-meta">' + post.mins + ' мин' + tagStr + ' →</span>';
         list.appendChild(a);
       });
     }());
