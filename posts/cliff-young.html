@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../styles.css">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 
@@ -84,8 +83,6 @@
     window.addEventListener('scroll', function () {
       nav.classList.toggle('scrolled', window.scrollY > 8);
     }, { passive: true });
-
-    lucide.createIcons();
 
     const burger = document.getElementById('nav-burger');
     const navLinks = document.getElementById('nav-links');
