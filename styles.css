@@ -216,16 +216,6 @@ section.s {
   overflow: hidden;
 }
 
-.hero-photo::after {
-  content: 'ФОТО · 4:5';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-}
 
 .hero-photo img {
   width: 100%;
