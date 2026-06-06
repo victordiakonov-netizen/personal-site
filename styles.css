@@ -504,6 +504,22 @@ footer .container {
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* =========================================================
+   Desktop nav-links (живёт вне header, позиционируется fixed)
+   ========================================================= */
+
+@media (min-width: 641px) {
+  .nav-links {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 56px;
+    height: 72px;
+    z-index: 11;
+  }
+}
+
+/* =========================================================
    Mobile (≤ 640px)
    ========================================================= */
 
