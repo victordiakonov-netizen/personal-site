@@ -328,6 +328,19 @@ section.s {
   font-weight: 500;
 }
 
+.blog-center {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.blog-annotation {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
 .blog-tag {
   color: var(--muted);
   font-weight: 500;

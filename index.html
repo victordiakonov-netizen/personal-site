@@ -181,9 +181,12 @@
             return '<a class="blog-tag" href="blog.html?tag=' + t + '">' + (TAG_NAMES[t] || t) + '</a>';
           }).join(', ');
         }
+        var annotationHtml = post.annotation
+          ? '<p class="blog-annotation">' + post.annotation + '</p>'
+          : '';
         row.innerHTML =
           '<span class="blog-date">' + fmtDate(post.date) + '</span>' +
-          '<span class="blog-title">' + post.title + '</span>' +
+          '<div class="blog-center"><span class="blog-title">' + post.title + '</span>' + annotationHtml + '</div>' +
           '<span class="blog-meta">' + post.mins + ' мин' + tagHtml + ' →</span>';
         list.appendChild(row);
       });
