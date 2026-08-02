@@ -54,7 +54,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-link {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--ink);
   padding: 8px 0;
@@ -68,7 +68,7 @@ a { color: inherit; text-decoration: none; }
 /* ---------- Type ---------- */
 
 .label {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -78,7 +78,7 @@ a { color: inherit; text-decoration: none; }
 .h2 {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: clamp(40px, 4vw, 60px);
+  font-size: clamp(2.5rem, 4vw, 3.75rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0;
@@ -87,11 +87,11 @@ a { color: inherit; text-decoration: none; }
 .lede {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  font-size: 21px;
+  font-size: 1.3125rem;
   line-height: 1.55;
   color: var(--ink);
   margin: 0;
-  max-width: 520px;
+  max-width: 32.5rem;
   letter-spacing: -0.005em;
 }
 
@@ -100,7 +100,7 @@ a { color: inherit; text-decoration: none; }
 .hero-name {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
-  font-size: clamp(52px, 5.5vw, 80px);
+  font-size: clamp(3.25rem, 5.5vw, 5rem);
   line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--ink);
@@ -110,7 +110,7 @@ a { color: inherit; text-decoration: none; }
 .hero-role {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.4;
   color: var(--ink);
   margin: 0 0 20px;
@@ -119,15 +119,15 @@ a { color: inherit; text-decoration: none; }
 .hero-desc {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.6;
   color: var(--muted);
   margin: 0;
-  max-width: 460px;
+  max-width: 28.75rem;
 }
 
 .body {
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.7;
   color: var(--ink);
 }
@@ -136,7 +136,7 @@ a { color: inherit; text-decoration: none; }
 
 .body p {
   margin: 0 0 1em;
-  max-width: 640px;
+  max-width: 40rem;
 }
 
 /* ---------- Sections ---------- */
@@ -148,7 +148,7 @@ section.s {
 
 .s-head {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: minmax(200px, max-content) 1fr;
   gap: 48px;
   align-items: baseline;
   margin-bottom: 96px;
@@ -163,7 +163,7 @@ section.s {
 .s-num {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--accent);
 }
 
@@ -225,7 +225,7 @@ section.s {
 
 /* ---------- About ---------- */
 
-.about-body { max-width: 640px; }
+.about-body { max-width: 40rem; }
 .about-body p + p { margin-top: 1.2em; }
 
 /* ---------- Doing ---------- */
@@ -234,7 +234,7 @@ section.s {
 
 .doing-row {
   display: grid;
-  grid-template-columns: 80px 240px 1fr 120px;
+  grid-template-columns: minmax(80px, max-content) minmax(240px, max-content) 1fr minmax(120px, max-content);
   gap: 32px;
   align-items: start;
   padding: 56px 0;
@@ -250,20 +250,20 @@ section.s {
 }
 
 .doing-num {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   font-weight: 500;
 }
 
 .doing-title {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.015em;
 }
 
 .doing-desc {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--muted);
   line-height: 1.65;
   margin: 0;
@@ -272,7 +272,7 @@ section.s {
 .doing-arrow {
   text-align: right;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 0.875rem;
   text-decoration: none;
   transition: color .2s, transform .25s;
 }
@@ -283,7 +283,7 @@ section.s {
 
 .blog-row {
   display: grid;
-  grid-template-columns: 120px 1fr auto;
+  grid-template-columns: minmax(120px, max-content) 1fr auto;
   gap: 32px;
   align-items: baseline;
   padding: 32px 0;
@@ -297,13 +297,13 @@ section.s {
 .blog-row:hover .blog-title { color: var(--accent); }
 
 .blog-date {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
   font-weight: 500;
 }
 
 .blog-title {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -311,7 +311,7 @@ section.s {
 }
 
 .blog-meta {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
   text-align: right;
   font-weight: 500;
@@ -324,7 +324,7 @@ section.s {
 }
 
 .blog-annotation {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
   font-weight: 400;
   line-height: 1.45;
@@ -350,13 +350,13 @@ section.s {
 }
 
 .blog-filter-label {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   color: var(--muted);
 }
 
 .blog-filter-clear {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--muted);
   border-bottom: 1px solid var(--hair);
@@ -371,7 +371,7 @@ section.s {
 
 .blog-more {
   margin-top: 48px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   display: inline-block;
   color: var(--muted);
@@ -394,7 +394,7 @@ section.s {
 
 .contacts-block {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: minmax(200px, max-content) 1fr;
   gap: 48px;
   align-items: start;
 }
@@ -404,7 +404,7 @@ section.s {
 footer {
   border-top: 1px solid var(--hair);
   padding: 40px 0;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: var(--ink);
 }
@@ -419,14 +419,14 @@ footer .container {
    ========================================================= */
 
 .post-wrap {
-  max-width: 680px;
+  max-width: 42.5rem;
   margin: 0 auto;
   padding: 64px 0 120px;
 }
 
 .post-back {
   display: inline-block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--muted);
   border-bottom: 1px solid var(--hair);
@@ -441,7 +441,7 @@ footer .container {
 }
 
 .post-meta {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--muted);
   font-weight: 500;
   margin: 0 0 16px;
@@ -450,7 +450,7 @@ footer .container {
 .post-h1 {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
-  font-size: clamp(26px, 3.5vw, 42px);
+  font-size: clamp(1.625rem, 3.5vw, 2.625rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -458,7 +458,7 @@ footer .container {
 }
 
 .post-body {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.75;
   color: var(--ink);
 }
@@ -514,6 +514,89 @@ footer .container {
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* =========================================================
+   Font-size widget
+   ========================================================= */
+
+#font-size-widget {
+  position: fixed;
+  top: 88px;
+  right: 56px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1px solid var(--hair);
+  border-radius: 2px;
+  transition: border-color .2s;
+}
+
+#font-size-widget:hover,
+#font-size-widget:focus-within {
+  border-color: var(--accent);
+}
+
+.font-size-icon {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1;
+  user-select: none;
+}
+
+.font-size-icon--sm { font-size: 0.75rem; }
+.font-size-icon--lg { font-size: 1.125rem; }
+
+#font-size-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 84px;
+  height: 2px;
+  background: var(--hair);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+#font-size-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+#font-size-slider::-webkit-slider-thumb:hover { background: var(--accent); }
+
+#font-size-slider::-moz-range-track {
+  height: 2px;
+  background: var(--hair);
+  border-radius: 2px;
+}
+#font-size-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+#font-size-slider::-moz-range-thumb:hover { background: var(--accent); }
+
+#font-size-slider:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+#font-size-slider:focus-visible::-moz-range-thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
    Desktop nav-links (живёт вне header, позиционируется fixed)
    ========================================================= */
 
@@ -556,7 +639,7 @@ footer .container {
   .nav-links.open { display: flex; }
 
   .nav-links .nav-link {
-    font-size: 26px;
+    font-size: 1.625rem;
     font-weight: 700;
     margin-left: 0;
     color: var(--ink);
@@ -574,15 +657,15 @@ footer .container {
     height: 240px;
   }
 
-  .hero-name { font-size: 40px; }
-  .hero-role { font-size: 18px; }
-  .hero-desc { font-size: 16px; }
+  .hero-name { font-size: 2.5rem; }
+  .hero-role { font-size: 1.125rem; }
+  .hero-desc { font-size: 1rem; }
 
   /* --- Секции --- */
   section.s { padding-block: 80px; }
 
-  .h2 { font-size: 30px; }
-  .body { font-size: 15px; }
+  .h2 { font-size: 1.875rem; }
+  .body { font-size: 0.9375rem; }
 
   .s-head {
     grid-template-columns: 1fr;
@@ -592,12 +675,12 @@ footer .container {
 
   /* --- Doing --- */
   .doing-row {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns: minmax(40px, max-content) 1fr;
     gap: 16px;
     padding: 32px 0;
   }
 
-  .doing-title { grid-column: 2; font-size: 26px; }
+  .doing-title { grid-column: 2; font-size: 1.625rem; }
   .doing-desc  { grid-column: 2; }
   .doing-arrow { display: none; }
 
@@ -608,7 +691,7 @@ footer .container {
   }
 
   .blog-date { display: none; }
-  .blog-title { font-size: 18px; }
+  .blog-title { font-size: 1.125rem; }
 
   /* --- Контакты --- */
   .contacts-section { padding-block: 80px 60px; }
@@ -626,6 +709,20 @@ footer .container {
 
   /* --- Посты --- */
   .post-wrap { padding: 40px 0 80px; }
-  .post-h1 { font-size: 22px; margin-bottom: 40px; }
-  .post-body { font-size: 16px; }
+  .post-h1 { font-size: 1.375rem; margin-bottom: 40px; }
+  .post-body { font-size: 1rem; }
+
+  /* --- Font-size widget --- */
+  #font-size-widget {
+    top: 18px;
+    right: 72px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  #font-size-slider { width: 60px; }
+
+  #nav-links.open ~ #font-size-widget {
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
