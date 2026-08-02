@@ -7,6 +7,14 @@ const TAG_NAMES = {
 
 const POSTS = [
   {
+    url: 'posts/forty-five-years-of-run-up.html',
+    date: '2026-08-02',
+    title: 'Сорок пять лет разгона',
+    mins: 4,
+    tags: ['lichnoe'],
+    annotation: 'Личный текст о рождении дочери и о том, как это меняет взгляд на прожитые сорок пять лет.'
+  },
+  {
     url: 'posts/fifty-fifty.html',
     date: '2026-08-02',
     title: 'Пятьдесят на пятьдесят',

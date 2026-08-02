@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сорок пять лет разгона — Виктор Дьяконов</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <!-- ========== Nav ========== -->
+  <header class="nav" id="nav">
+    <div class="container">
+      <nav class="nav-inner">
+        <button class="nav-burger" id="nav-burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-links" id="nav-links">
+    <a class="nav-link" href="../index.html#about">о себе</a>
+    <a class="nav-link" href="../index.html#doing">чем занимаюсь</a>
+    <a class="nav-link" href="../blog.html">блог</a>
+    <a class="nav-link" href="../index.html#contacts">контакты</a>
+  </div>
+
+  <!-- ========== Статья ========== -->
+  <main class="container">
+    <div class="post-wrap">
+
+      <a class="post-back" href="../index.html#blog">← назад</a>
+
+      <p class="post-meta">2 августа 2026 · 4 мин чтения</p>
+      <h1 class="post-h1">Сорок пять лет разгона</h1>
+
+      <div class="post-body">
+        <p>10 июня родилась моя дочь Есения. Мне 45, жене 39, скоро сорок. Первенец, ждали долго.</p>
+
+        <p>Ожидали 12-го. Дочь поторопилась и пришла на два дня раньше.</p>
+
+        <p>Когда я зашёл в палату, она спала в кроватке. Я не представлял, что она будет настолько маленькой. Голова — с кулак. Рост 54 сантиметра, вес 3360 граммов.</p>
+
+        <p>Взять её на руки я решился не сразу. Боялся — резкое движение, и что-то пойдёт не так. У меня крупные руки, и в одной ладони помещался едва ли не весь ребёнок.</p>
+
+        <p>Страх прошёл сразу, как только я её взял.</p>
+
+        <p>Жена смотрела на нас. Лицо светилось, улыбка не сходила — такая тёплая, такая добрая, какой я раньше у неё не видел. Так умеют улыбаться только мамы. Что я ей сказал, не помню. Может, и ничего не сказал — кажется, просто смотрел то на неё, то на дочь.</p>
+
+        <p>Есения спокойная. Иногда бывает не в духе — но с кем не бывает в первые месяцы жизни. Уже прошло почти два месяца.</p>
+
+        <p>На улице как будто стало больше детей. Их не больше — это я смотрю иначе.</p>
+
+        <p>Сейчас она спит чаще, чем бодрствует. Она в моих мыслях постоянно. Беру её на руки, чувствую тепло — и не понимаю, как раньше жил без этого ощущения. Знаю одно: сорок пять лет оказались разгоном. А она — то, ради чего был разгон.</p>
+
+        <p class="post-signature">Не теряйте фокус.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <div class="container">
+      <span>© Виктор Дьяконов, 2026</span>
+      <span>сделано вручную</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    const burger = document.getElementById('nav-burger');
+    const navLinks = document.getElementById('nav-links');
+    burger.addEventListener('click', function () {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+
+  <script src="../posts-data.js"></script>
+  <script>
+    (function () {
+      var filename = 'posts/' + location.pathname.split('/').pop();
+      var post = POSTS.find(function (p) { return p.url === filename; });
+      if (!post || !post.tags || !post.tags.length) return;
+      var tagHtml = post.tags.map(function (t) {
+        return '<a class="blog-tag" href="../blog.html?tag=' + t + '">' + (TAG_NAMES[t] || t) + '</a>';
+      }).join(', ');
+      var meta = document.querySelector('.post-meta');
+      if (meta) {
+        var span = document.createElement('span');
+        span.innerHTML = ' · ' + tagHtml;
+        meta.appendChild(span);
+      }
+    }());
+  </script>
+
+</body>
+</html>
