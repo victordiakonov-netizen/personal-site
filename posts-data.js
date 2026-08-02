@@ -8,7 +8,7 @@ const TAG_NAMES = {
 const POSTS = [
   {
     url: 'posts/fifty-fifty.html',
-    date: '2026-06-02',
+    date: '2026-08-02',
     title: 'Пятьдесят на пятьдесят',
     mins: 5,
     tags: ['upravlenie'],
@@ -16,9 +16,9 @@ const POSTS = [
   },
   {
     url: 'posts/seven-of-thirty.html',
-    date: '2026-05-28',
+    date: '2026-08-02',
     title: 'Семь из тридцати',
-    mins: 6,
+    mins: 5,
     tags: ['lichnoe', 'ai'],
     annotation: 'Личный опыт перехода от использования ИИ как улучшенного поисковика к работе с ним как с инструментом.'
   }
